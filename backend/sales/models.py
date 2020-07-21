@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class Agents(models.Model):
     id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=20)
@@ -12,9 +12,11 @@ class Agents(models.Model):
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
 
+
 class Reports(models.Model):
     id = models.AutoField(primary_key=True)
-    agent_id = models.ForeignKey(Agents, on_delete=models.CASCADE, related_name="agent", null=True)
+    agent_id = models.ForeignKey(
+        Agents, on_delete=models.CASCADE, related_name="reports", null=True)
     period = models.CharField(max_length=20)
     sales_volume = models.FloatField()
 
