@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule } from '@angular/router'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,11 +22,14 @@ import { ReportsCreateComponent } from './reports-create/reports-create.componen
     ReportsCreateComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'agents', component: AgentsComponent},
+      { path: 'addagents', component: AgentsCreateComponent},
       { path: 'agents/:id', component: AgentsDetailsComponent}
     ])
   ],

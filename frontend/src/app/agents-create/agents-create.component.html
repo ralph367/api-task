@@ -1,1 +1,12 @@
-<p>agents-create works!</p>
+<div class="submit-form">
+
+    <div class="form-group" *ngFor="let data of agent ">
+        <label> {{data.name}}</label>
+        <input type="{{data.value.type}}" id="{{data.value.id}}" class="form-control" name="{{data.value.id}}"
+            [(ngModel)]="values[data.value.id]">
+    </div>
+    <button (click)="postSalesAgents()" class="btn btn-success">Submit</button>
+
+
+
+</div>

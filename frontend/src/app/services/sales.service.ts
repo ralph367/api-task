@@ -14,4 +14,7 @@ export class SalesService {
     return this.http.get(this.backEndUrl+"agents/")
   }
 
+  postAgents(data): Observable<any>{
+    return this.http.post(this.backEndUrl+"agents/", data)
+  }
 }
