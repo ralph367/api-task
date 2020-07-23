@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { SalesService } from '../services/sales.service';
 
 @Component({
@@ -56,6 +57,5 @@ export class AgentsCreateComponent implements OnInit {
         console.log(error);
       }
     )
-
   }
 }
