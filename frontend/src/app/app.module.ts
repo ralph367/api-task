@@ -29,6 +29,7 @@ import { ReportsCreateComponent } from './reports-create/reports-create.componen
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'agents', component: AgentsComponent},
+      { path: 'reports', component: ReportsComponent},
       { path: 'addagents', component: AgentsCreateComponent},
       { path: 'agents/:id', component: AgentsDetailsComponent}
     ])

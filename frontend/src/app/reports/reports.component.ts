@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SalesService } from '../services/sales.service';
 
 @Component({
   selector: 'app-reports',
@@ -7,9 +8,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportsComponent implements OnInit {
 
-  constructor() { }
+  reports: any;
+  agents: any;
+  i = 1;
+  constructor(private salesService: SalesService) { }
 
   ngOnInit(): void {
+    this.getSalesAgents();
+    this.getSalesReports();
   }
 
+  getSalesAgents(): void {
+    this.salesService.getAgents().subscribe(
+      data => {
+        this.agents = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  getSalesReports(): void {
+    this.salesService.getReports().subscribe(
+      data => {
+        this.reports = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  getAgentNameById(message: Object) {
+    var name = "Error"
+    if (this.agents != undefined) {
+      for (let agent of this.agents)
+        if (agent.id == message)
+          name = agent.first_name + " " + agent.last_name;
+    }
+    return name
+  }
 }
