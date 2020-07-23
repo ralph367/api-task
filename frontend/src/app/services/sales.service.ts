@@ -14,6 +14,10 @@ export class SalesService {
     return this.http.get(this.backEndUrl+"agents/")
   }
 
+  getAgentDetails(id): Observable<any>{
+    return this.http.get(this.backEndUrl+"agents/"+id+"/")
+  }
+
   getReports(): Observable<any>{
     return this.http.get(this.backEndUrl+"reports/")
   }

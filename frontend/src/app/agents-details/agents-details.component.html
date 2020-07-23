@@ -1,1 +1,41 @@
-<p>agents-details works!</p>
+<div class="card" *ngIf="details != undefined">
+    <div class="card-header">
+        <h3>History of Agent: {{details.first_name}} {{details.last_name}}</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Personal Infromation</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Name:</b> {{details.first_name}}</li>
+                    <li class="list-group-item"><b>Last Name:</b> {{details.last_name}}</li>
+                    <li class="list-group-item"><b>Birthday Date:</b> {{details.birthday_date}}</li>
+                    <li class="list-group-item"><b>Hire Date:</b> {{details.hire_date}}</li>
+                    <li class="list-group-item"><b>City:</b> {{details.city}}</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h5>Reports Data</h5>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Period</th>
+                                <th>Sales Volumes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let report of details.reports">
+                                <td>{{report.id}}</td>
+                                <td>{{report.period}}</td>
+                                <td>{{report.sales_volume}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
