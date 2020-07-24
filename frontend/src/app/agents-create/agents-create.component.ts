@@ -46,6 +46,7 @@ export class AgentsCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Function that will be triggered on submit button where it will call postAgents service function to add a new record 
   postSalesAgents(): void {
     console.log(this.values)
     this.salesService.postAgents(this.values).subscribe(

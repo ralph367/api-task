@@ -16,7 +16,8 @@ export class AgentsComponent implements OnInit {
     this.getSalesAgents();
   }
 
-  getSalesAgents(): void{
+  // Function that will be triggered on page load, then it will call getAgents service function and adding the received data into agents to render it into html
+  getSalesAgents(): void {
     this.salesService.getAgents().subscribe(
       data => {
         this.agents = data;
@@ -28,7 +29,8 @@ export class AgentsComponent implements OnInit {
     )
   }
 
-  deleteSalesAgent(id): void{
+  // Function that will be triggered on delete button click from the html and will call deleteAgent service function to remove the given agent id record then reloads the table
+  deleteSalesAgent(id): void {
     this.salesService.deleteAgent(id).subscribe(
       data => {
         console.log(data);

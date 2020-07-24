@@ -36,6 +36,7 @@ export class ReportsCreateComponent implements OnInit {
     this.getSalesAgents();
   }
 
+  // Function that will be triggered on page load in order to add the available agents into an option input to assign the report to a specific agent
   getSalesAgents(): void{
     this.salesService.getAgents().subscribe(
       data => {
@@ -48,6 +49,7 @@ export class ReportsCreateComponent implements OnInit {
     )
   }
 
+  // Function that will be triggered on submit button where it will call postReports service function to add a new record 
   postSalesReports(): void {
     console.log(this.values)
     this.salesService.postReports(this.values).subscribe(

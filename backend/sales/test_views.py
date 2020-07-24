@@ -9,6 +9,9 @@ apiclient = APIClient()
 
 
 class GetReportsAgentsTest(TestCase):
+    """ Unit test to get single/all reports/agents and delete an agent/report record 
+
+    """
     def setUp(self):
         Agents.objects.create(first_name="James",
                               last_name="Romero",
@@ -72,6 +75,8 @@ class GetReportsAgentsTest(TestCase):
 
 
 class PostReportsAgentsTest(TestCase):
+    """ creating report/agent new record using post request
+    """
     def setUp(self):
         Agents.objects.create(first_name="Kayla",
                               last_name="Arias",
