@@ -18,7 +18,7 @@
                 <tbody>
                     <tr *ngFor="let agent of agents">
                         <td>{{agent.id}}</td>
-                        <td><a [routerLink]="['/agents', agent.id]">{{agent.first_name}} {{agent.last_name}}</a></td>
+                        <td><a [routerLink]="['/agents', agent.id]">{{agent.last_name}} {{agent.first_name}} </a></td>
                         <td>{{agent.hire_date}}</td>
                         <td>{{agent.birthday_date}}</td>
                         <td>{{agent.city}}</td>
