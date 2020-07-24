@@ -34,3 +34,43 @@ Then in a new terminal change your directory the the frontend folder in this rep
 ```sh
 ng serve
 ```
+
+## Documentation
+
+### Django
+
+In the following system django is only being used to save the Agents and Reports data, these actions will be triggered using API by the help of Django REST Framework
+| Methods | URLs              | Actions                       |
+|---------|-------------------|-------------------------------|
+| POST    | /api/agents/      | create a new agent            |
+| POST    | /api/reports/     | create a new report           |
+| GET     | /api/agents/      | get all the available agents  |
+| GET     | /api/agents/:id/  | get agent data by id          |
+| GET     | /api/reports/     | get all the available reports |
+| DELETE  | /api/agents/:id/  | delete the agent by id        |
+| DELETE  | /api/reports/:id/ | delete the report by id       |
+
+### Angular
+
+Angular will be responsible to make requests from django in order to render the result in the web page.
+
+#### Services
+
+Created multiple services to get/post data from django and will be called from different components:
+- getAgents()
+- getAgentDetails(id)
+- deleteAgent(id)
+- getReports()
+- postAgents(data)
+- postReports(data)
+- deleteReport(id)
+
+#### Components
+
+Here are the available components of the system:
+- agents (/agents/)
+- agents-create (/addagents/)
+- agents-details (/agents/:id/)
+- home 
+- reports (/reports/)
+- reports-create (/addreports/)
