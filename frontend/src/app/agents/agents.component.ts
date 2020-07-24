@@ -27,4 +27,16 @@ export class AgentsComponent implements OnInit {
       }
     )
   }
+
+  deleteSalesAgent(id): void{
+    this.salesService.deleteAgent(id).subscribe(
+      data => {
+        console.log(data);
+        this.getSalesAgents();
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
 }

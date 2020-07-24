@@ -10,7 +10,6 @@ export class ReportsComponent implements OnInit {
 
   reports: any;
   agents: any;
-  i = 1;
   constructor(private salesService: SalesService) { }
 
   ngOnInit(): void {
@@ -43,12 +42,25 @@ export class ReportsComponent implements OnInit {
   }
 
   getAgentNameById(message: Object) {
-    var name = "Error"
+    var name = "Loading"
     if (this.agents != undefined) {
       for (let agent of this.agents)
         if (agent.id == message)
           name = agent.first_name + " " + agent.last_name;
     }
     return name
+  }
+
+  deleteSalesReport(id): void{
+    this.salesService.deleteReport(id).subscribe(
+      data => {
+        this.getSalesAgents();
+        this.getSalesReports();
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 }

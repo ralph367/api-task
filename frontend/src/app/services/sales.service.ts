@@ -18,6 +18,10 @@ export class SalesService {
     return this.http.get(this.backEndUrl+"agents/"+id+"/")
   }
 
+  deleteAgent(id): Observable<any>{
+    return this.http.delete(this.backEndUrl+"agents/"+id+"/")
+  }
+
   getReports(): Observable<any>{
     return this.http.get(this.backEndUrl+"reports/")
   }
@@ -28,5 +32,9 @@ export class SalesService {
 
   postReports(data): Observable<any>{
     return this.http.post(this.backEndUrl+"reports/", data)
+  }
+
+  deleteReport(id): Observable<any>{
+    return this.http.delete(this.backEndUrl+"reports/"+id+"/")
   }
 }

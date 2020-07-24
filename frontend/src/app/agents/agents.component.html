@@ -12,6 +12,7 @@
                         <th>Hire Date</th>
                         <th>Birthday Day</th>
                         <th>City</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +22,7 @@
                         <td>{{agent.hire_date}}</td>
                         <td>{{agent.birthday_date}}</td>
                         <td>{{agent.city}}</td>
+                        <td><button class="btn btn-sm btn-outline-secondary" (click)="deleteSalesAgent(agent.id)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>

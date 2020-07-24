@@ -19,6 +19,7 @@
                         <td><a [routerLink]="['/agents', report.agent_id]">{{getAgentNameById(report.agent_id)}}</a></td>
                         <td>{{report.period}}</td>
                         <td>{{report.sales_volume}}</td>
+                        <td><button class="btn btn-sm btn-outline-secondary" (click)="deleteSalesReport(report.id)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>

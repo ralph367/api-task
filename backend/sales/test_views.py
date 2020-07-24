@@ -61,6 +61,15 @@ class GetReportsAgentsTest(TestCase):
         self.assertEqual(json.loads(response.content),
                          self.valid_report_payload)
 
+    def test_delete_agent(self):
+        response = apiclient.delete('/api/agents/1/')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+        
+    def test_delete_report(self):
+        response = apiclient.delete('/api/reports/1/')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
 
 class PostReportsAgentsTest(TestCase):
     def setUp(self):
