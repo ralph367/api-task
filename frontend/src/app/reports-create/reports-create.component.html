@@ -1,17 +1,18 @@
-<div class="submit-form">
-
-    <div class="form-group" *ngFor="let data of report ">
-        <label> {{data.name}}</label>
-        <input *ngIf="data.value.type != 'option'" type="{{data.value.type}}" id="{{data.value.id}}"
-            class="form-control" name="{{data.value.id}}" [(ngModel)]="values[data.value.id]">
-        <select *ngIf="data.value.type == 'option'" [(ngModel)]="values[data.value.id]" class="form-control">
-            <option *ngFor="let agent of agents" [value]="agent.id">
-                {{agent.first_name}} {{agent.last_name}}
-            </option>
-        </select>
+<div class="card">
+    <div class="card-header">Add a new record</div>
+    <div class="card-body">
+        <div class="submit-form">
+            <div class="form-group" *ngFor="let data of report ">
+                <label> {{data.name}}</label>
+                <input *ngIf="data.value.type != 'option'" type="{{data.value.type}}" id="{{data.value.id}}"
+                    class="form-control" name="{{data.value.id}}" [(ngModel)]="values[data.value.id]">
+                <select *ngIf="data.value.type == 'option'" [(ngModel)]="values[data.value.id]" class="form-control">
+                    <option *ngFor="let agent of agents" [value]="agent.id">
+                        {{agent.first_name}} {{agent.last_name}}
+                    </option>
+                </select>
+            </div>
+            <button (click)="postSalesReports()" class="btn btn-success">Submit</button>
+        </div>
     </div>
-    <button (click)="postSalesReports()" class="btn btn-success">Submit</button>
-
-
-
 </div>

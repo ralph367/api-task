@@ -11,6 +11,7 @@ import { AgentsComponent } from './agents/agents.component';
 import { AgentsDetailsComponent } from './agents-details/agents-details.component';
 import { AgentsCreateComponent } from './agents-create/agents-create.component';
 import { ReportsCreateComponent } from './reports-create/reports-create.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReportsCreateComponent } from './reports-create/reports-create.componen
     AgentsComponent,
     AgentsDetailsComponent,
     AgentsCreateComponent,
-    ReportsCreateComponent
+    ReportsCreateComponent,
+    HomeComponent
   ],
   imports: [
     FormsModule,
@@ -28,6 +30,7 @@ import { ReportsCreateComponent } from './reports-create/reports-create.componen
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: '', component: HomeComponent},
       { path: 'agents', component: AgentsComponent},
       { path: 'reports', component: ReportsComponent},
       { path: 'addagents', component: AgentsCreateComponent},

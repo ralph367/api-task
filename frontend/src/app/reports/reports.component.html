@@ -3,17 +3,6 @@
         Reports List
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="col-md-2">Filter By:</div>
-            <div class="col-md-4">
-                <input type="text"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                Filtered by:
-            </div>
-        </div>
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -27,7 +16,7 @@
                 <tbody>
                     <tr *ngFor="let report of reports">
                         <td>{{report.id}}</td>
-                        <td>{{getAgentNameById(report.agent_id)}}</td>
+                        <td><a [routerLink]="['/agents', report.agent_id]">{{getAgentNameById(report.agent_id)}}</a></td>
                         <td>{{report.period}}</td>
                         <td>{{report.sales_volume}}</td>
                     </tr>
